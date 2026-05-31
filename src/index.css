@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-slate-50 text-slate-800 font-sans antialiased transition-colors duration-300;
+  }
+  .dark body {
+    @apply bg-slate-950 text-slate-200;
+  }
+  h1, h2, h3, .font-display {
+    @apply font-display tracking-tight;
+  }
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-200 dark:bg-slate-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-electric-500/60 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-electric-500;
+  }
+}
+
+@layer components {
+  /* Reusable surface card */
+  .surface {
+    @apply bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 rounded-2xl;
+  }
+  /* Electric gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-electric-400 via-glow to-electric-600 bg-clip-text text-transparent;
+  }
+  /* Primary button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-electric-600 px-5 py-3
+           font-semibold text-white transition-all duration-200
+           hover:bg-electric-500 hover:shadow-glow active:scale-95 disabled:opacity-50;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300
+           dark:border-slate-700 px-5 py-3 font-semibold transition-all duration-200
+           hover:border-electric-500 hover:text-electric-500 active:scale-95;
+  }
+  .input-field {
+    @apply w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50
+           dark:bg-slate-800/60 px-4 py-3 outline-none transition-all
+           focus:border-electric-500 focus:ring-2 focus:ring-electric-500/30;
+  }
+}
+
+/* Grid mesh background used on the auth + hero screens */
+.mesh-bg {
+  background-color: #020617;
+  background-image:
+    radial-gradient(at 20% 20%, rgba(37, 99, 235, 0.35) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(56, 189, 248, 0.25) 0px, transparent 50%),
+    radial-gradient(at 60% 90%, rgba(29, 78, 216, 0.30) 0px, transparent 50%);
+}
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
