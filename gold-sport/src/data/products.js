@@ -1,9 +1,7 @@
-// Central product catalogue. Every page renders from this array,
-// so the whole store is data-driven (add an object here -> it appears everywhere).
 
 export const CATEGORIES = [
   { slug: 'equipment',   label: 'Equipment',   tagline: 'Professional gear to power your training.', image: '/images/equipment1.jpeg' },
-  { slug: 'supplements', label: 'Supplements', tagline: 'Boost your performance with premium nutrition.', image: '/images/supplements1.jpeg' },
+  { slug: 'supplements', label: 'Supplements', tagline: 'Boost your performance with premium nutrition.', image: '/images/c4.jpeg' },
   { slug: 'men',         label: 'Men Clothes', tagline: 'Premium sportswear designed for performance.', image: '/images/mens1.jpeg' },
   { slug: 'bags',        label: 'Bags',        tagline: 'Durable, stylish, and ready for every workout.', image: '/images/bags1.jpeg' },
 ]
@@ -95,9 +93,9 @@ export const products = [
   },
   {
     id: 'performance-hoodie', category: 'men', brand: 'GOLD Wear',
-    name: 'Sport Performance Hoodie', price: 49.99, image: '/images/mens2.jpeg',
+    name: 'Sport Performance Shirt', price: 49.99, image: '/images/mens2.jpeg',
     description: 'Warm, lightweight, and ideal for outdoor workouts.',
-    longDescription: 'A lightweight brushed-fleece hoodie that keeps you warm on cold mornings without weighing you down.',
+    longDescription: 'A lightweight brushed-fleece shirt that keeps you warm on cold mornings without weighing you down.',
     sizes: ['M', 'L', 'XL'],
     rating: 4.7,
   },
@@ -148,8 +146,6 @@ export const products = [
     rating: 4.5,
   },
 ]
-
-// Helpers
 export const getProductById = (id) => products.find((p) => p.id === id)
 export const getByCategory = (slug) => products.filter((p) => p.category === slug)
 export const featured = () =>
